@@ -39,3 +39,17 @@ We get our data from : http://www.nyc.gov/html/tlc/html/about/trip_record_data.s
 <b> Fourier Transform: </b> From the Fourier transform plot of our time-series data we find the top amplitudes and corresponding frequencies
 </p> 
 
+<h2> Modeling : Baseline Models</h2>
+<p> Now we get into modelling in order to forecast the pickup densities for the months of Jan, Feb and March of 2016 for which we are using multiple models with two variations : Using Ratios of the 2016 data to the 2015 data and Using Previous known values of the 2016 data itself to predict the future values.<br>
+ We used <b>Simple Moving Averages</b>, <b>Weighted Moving Averages</b> and <b>Exponential Weighted Moving Averages</b>
+</p>
+<h2> Modeling : Regression Models</h2>
+<p>
+<b>Train-test split: </b>Before we start predictions using the tree based regression models we take 3 months of 2016 pickup data and split it such that for every region we have 70% data in train and 30% in test, ordered date-wise for every region<br>
+ 
+ <b>Final features: </b> We have the following features in our final train and test data : the last 5 no of pickups, lat and long of the cluster centre, exponential average, top amplitudes and frequencies obtained from FFT<br>
+ 
+ <b> Models used: </b> We tried out Linear Regression, Random Forest Regressor and xgBoost Regressor. We used hyperparameter tuning to find the best hyperparams for each of the models and then finally computed the performance metrices in each case.<br>
+ 
+</p>
+
