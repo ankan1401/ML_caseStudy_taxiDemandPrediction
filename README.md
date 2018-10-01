@@ -52,6 +52,6 @@ From the baseline models we saw that exponential weighted moving avarage gives u
  
  <b> Models used: </b> We tried out Linear Regression, Random Forest Regressor and xgBoost Regressor. We used hyperparameter tuning to find the best hyperparams for each of the models and then finally computed the performance metrices in each case.<br>
  
- <b> Conclusion: </b> RandomForest regressor gave us the best performance metric(MAPE). And performing some extra feature engg tricks, we were able to reduce the MAPE to <12%
 </p>
+ <h2> Conclusion: </h2> RandomForest regressor gave us the best value for performance metric(MAPE). And performing some extra FE tricks, we were able to reduce the MAPE to <12%
 
