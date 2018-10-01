@@ -41,15 +41,17 @@ We get our data from : http://www.nyc.gov/html/tlc/html/about/trip_record_data.s
 
 <h2> Modeling : Baseline Models</h2>
 <p> Now we get into modelling in order to forecast the pickup densities for the months of Jan, Feb and March of 2016 for which we are using multiple models with two variations : Using Ratios of the 2016 data to the 2015 data and Using Previous known values of the 2016 data itself to predict the future values.<br>
- We used <b>Simple Moving Averages</b>, <b>Weighted Moving Averages</b> and <b>Exponential Weighted Moving Averages</b>
+We used <b>Simple Moving Averages</b>, <b>Weighted Moving Averages</b> and <b>Exponential Weighted Moving Averages</b>
+From the baseline models we saw that exponential weighted moving avarage gives us the best error, so we add the same exponential weighted moving avarage at t as a feature to our data
 </p>
 <h2> Modeling : Regression Models</h2>
 <p>
 <b>Train-test split: </b>Before we start predictions using the tree based regression models we take 3 months of 2016 pickup data and split it such that for every region we have 70% data in train and 30% in test, ordered date-wise for every region<br>
  
- <b>Final features: </b> We have the following features in our final train and test data : the last 5 no of pickups, lat and long of the cluster centre, exponential average, top amplitudes and frequencies obtained from FFT<br>
+ <b>Final features: </b> We have the following features in our final train and test data : the last 5 no of pickups, lat and long of the cluster centre, exponential weighted moving average, top amplitudes and frequencies obtained from FFT<br>
  
  <b> Models used: </b> We tried out Linear Regression, Random Forest Regressor and xgBoost Regressor. We used hyperparameter tuning to find the best hyperparams for each of the models and then finally computed the performance metrices in each case.<br>
  
+ <b> Conclusion: </b> RandomForest regressor gave us the best performance metric(MAPE). And performing some extra feature engg tricks, we were able to reduce the MAPE to <12%
 </p>
 
